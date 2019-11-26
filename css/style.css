@@ -1,0 +1,224 @@
+@charset "utf-8";
+
+.clearfix::after{
+  display: block;
+  content: "";
+  clear: both;
+}
+
+a{
+  text-decoration: none;  /*リンクの下線の装飾をなしに*/
+}
+
+.float-left{
+  float: left;
+}
+
+.header{
+  background-color: #fff;
+  position: fixed;  /*位置を固定*/
+  width: 100%;  /*画面幅が子要素が親を無視してしまった為、ここに100%を指定*/
+}
+
+.inner{
+  color: #333;
+  margin: 0 auto;
+  width: 1100px;
+}
+
+.header-inner{
+  background-color: #fff;
+  padding: 15px 0;
+}
+
+.header_img{
+  font-size: 40px;
+}
+
+.header-contact_link{
+  background-color: #74cfae;
+  color: #fff;
+  font-size: 12px;
+  padding: 14px 12px;
+  float: right;
+}
+
+.header-contact_link:hover{
+  transition: 0.3s;
+  color: #333;
+}
+
+.main{
+  background-color: 	#f2f2f2;
+}
+
+.theme-inner{
+  padding: 250px 0;
+}
+
+.theme,.subtheme,.section_text,.section-bottom_text,.article-bottom_text{
+  text-align: center;
+}
+
+.theme{
+  color: 	#74cfae;
+  font-size: 90px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.subtheme{
+  color: #c0c0c0;
+  font-size: 30px;
+}
+
+.section-top{
+  background-color: #74cfae;
+}
+
+.section-top-inner{
+  box-sizing: border-box;
+  padding: 50px 0 0 100px;
+}
+
+.section_text{
+  float: right;
+}
+
+.section-top_text-top{
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 35px;
+}
+
+.section-top_text-bottom{
+  color: #fff;
+  font-size: 16px;
+  line-height: 20px;
+  word-break: break-word;
+  width: 600px;
+}
+
+.article-inner{
+  padding: 60px 0 70px 0;
+}
+
+.article_text-top{
+  font-size: 24px;
+  text-align: center;
+}
+
+.article_contents-block{
+  padding: 40px 0 90px 0;
+}
+
+.article_contents_img{
+  margin: 0 0 80px 100px;
+  opacity: 0.7;
+}
+
+.article_contents_img:hover{
+  transition: 0.3s;
+  opacity: 1;
+}
+
+.article_contents_img:nth-child(3n+1){
+  margin-left: 0;
+}
+
+.margin-bottom0{
+  margin-bottom: 0;
+}
+
+.article-bottom-block{
+  width: 740px;
+  margin: 0 auto;
+  /* display: flex;
+  justify-content: center; これでもできる */
+}
+
+.article-bottom_text{
+  width: 540px;
+  word-break: break-word;
+}
+
+.article-bottom_link{
+  background-color: #74cfae;
+  color: #fff;
+  font-size: 12px;
+  padding: 14px 20px;
+  margin-left: 90px;
+}
+
+.article-bottom_link:hover{
+  transition: 0.3s;
+  color: #333;
+}
+
+.section-bottom{
+  background-color: #4e4e4e;
+}
+
+.section-bottom-inner{
+  padding: 70px 0 100px 0;
+}
+
+.section-bottom_text{
+  color: #fff;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-bottom_contents{
+  width: 1050px;
+  margin: 0 auto;
+}
+
+.circle{
+  margin-left: 180px;
+}
+
+.circle:first-child{
+  margin-left: 0;
+}
+
+.section-bottom_contents_text{
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.nav-inner{
+  padding: 200px 0;
+  text-align: center;
+  font-size: 0; /*子要素がinlineなので*/
+}
+
+.nav_sns_img{
+  color: #74cfae;
+  display: inline-block;  /*aタグをinline要素にして*/
+  padding: 20px 0;
+  width: 185px; /*aタグのままだと横幅がつかない*/
+  font-size: 50px;
+  text-align: center;
+}
+
+.nav_sns_img:hover{
+  background-color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer{
+  background-color: #74cfae;
+}
+
+.footer-inner{
+  padding: 20px 0 25px 0;
+}
+
+.footer_text{
+  color: #fff;
+  text-align: right;
+}
