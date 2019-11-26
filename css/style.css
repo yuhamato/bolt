@@ -1,5 +1,14 @@
 @charset "utf-8";
 
+body{
+  font-family: Lato;
+  color: #333;
+}
+
+.font-raleway{
+  font-family: Raleway;
+}
+
 .clearfix::after{
   display: block;
   content: "";
@@ -14,16 +23,21 @@ a{
   float: left;
 }
 
+.float-right{
+  float: right;
+}
+
 .header{
   background-color: #fff;
   position: fixed;  /*位置を固定*/
   width: 100%;  /*画面幅が子要素が親を無視してしまった為、ここに100%を指定*/
+  z-index: 1; /*ヘッダーが一番上のレイヤーに*/
 }
 
 .inner{
-  color: #333;
   margin: 0 auto;
   width: 1100px;
+  /* text-align: center; インナーの子要素全てがセンターになる*/
 }
 
 .header-inner{
@@ -40,24 +54,21 @@ a{
   color: #fff;
   font-size: 12px;
   padding: 14px 12px;
-  float: right;
+  transition: 0.3s;
 }
 
 .header-contact_link:hover{
-  transition: 0.3s;
   color: #333;
 }
 
 .main{
   background-color: 	#f2f2f2;
+  padding-top: 70px;
 }
 
 .theme-inner{
   padding: 250px 0;
-}
-
-.theme,.subtheme,.section_text,.section-bottom_text,.article-bottom_text{
-  text-align: center;
+  /* text-align: center; theme-innerの子要素.themeとsubthemeがセンターになる */
 }
 
 .theme{
@@ -65,113 +76,118 @@ a{
   font-size: 90px;
   font-weight: 700;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .subtheme{
   color: #c0c0c0;
   font-size: 30px;
+  text-align: center;
 }
 
-.section-top{
+.what-block{
   background-color: #74cfae;
 }
 
-.section-top-inner{
+.what-block-inner{
   box-sizing: border-box;
   padding: 50px 0 0 100px;
 }
 
-.section_text{
-  float: right;
-}
 
-.section-top_text-top{
+
+.what_text-top{
   color: #fff;
   font-size: 24px;
   margin-bottom: 35px;
-}
-
-.section-top_text-bottom{
-  color: #fff;
-  font-size: 16px;
-  line-height: 20px;
-  word-break: break-word;
-  width: 600px;
-}
-
-.article-inner{
-  padding: 60px 0 70px 0;
-}
-
-.article_text-top{
-  font-size: 24px;
   text-align: center;
 }
 
-.article_contents-block{
-  padding: 40px 0 90px 0;
+.what_text-bottom{
+  color: #fff;
+  font-size: 20px;
+  line-height: 25px;
+  word-break: break-word;
+  width: 650px;
+  text-align: center;
 }
 
-.article_contents_img{
+.ourwork-inner{
+  padding: 60px 0 70px 0;
+}
+
+.ourwork_text-top{
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.ourwork_contents-block{
+  margin-bottom: 90px;
+}
+
+.ourwork_contents_img{
   margin: 0 0 80px 100px;
   opacity: 0.7;
+  transition: 0.3s;
 }
 
-.article_contents_img:hover{
-  transition: 0.3s;
+.ourwork_contents_img:hover{
   opacity: 1;
 }
 
-.article_contents_img:nth-child(3n+1){
+.ourwork_contents_img:nth-child(3n+1){
   margin-left: 0;
 }
 
-.margin-bottom0{
+.ourwork_contents_img:nth-last-child(-1n+3){
   margin-bottom: 0;
 }
 
-.article-bottom-block{
-  width: 740px;
+.ourwork-bottom-block{
+  width: 650px;
   margin: 0 auto;
   /* display: flex;
   justify-content: center; これでもできる */
 }
 
-.article-bottom_text{
-  width: 540px;
+.ourwork-bottom_text{
+  width: 460px;
   word-break: break-word;
+  text-align: center;
+  line-height: 20px;
 }
 
-.article-bottom_link{
+.ourwork-bottom_link{
   background-color: #74cfae;
   color: #fff;
   font-size: 12px;
   padding: 14px 20px;
   margin-left: 90px;
+  transition: 0.3s;
 }
 
-.article-bottom_link:hover{
-  transition: 0.3s;
+.ourwork-bottom_link:hover{
   color: #333;
 }
 
-.section-bottom{
+.ourskill-bottom{
   background-color: #4e4e4e;
 }
 
-.section-bottom-inner{
+.ourskill-bottom-inner{
   padding: 70px 0 100px 0;
 }
 
-.section-bottom_text{
+.ourskill-bottom_text{
   color: #fff;
   font-size: 24px;
   text-align: center;
   margin-bottom: 60px;
 }
 
-.section-bottom_contents{
-  width: 1050px;
+.ourskill-bottom_contents{
+  width: 1030px;
   margin: 0 auto;
 }
 
@@ -179,14 +195,17 @@ a{
   margin-left: 180px;
 }
 
+.circle_img{
+  margin-bottom: 10px;
+}
+
 .circle:first-child{
   margin-left: 0;
 }
 
-.section-bottom_contents_text{
+.ourskill-bottom_contents_text{
   color: #fff;
   text-align: center;
-  padding: 10px 0;
 }
 
 .nav-inner{
@@ -202,12 +221,11 @@ a{
   width: 185px; /*aタグのままだと横幅がつかない*/
   font-size: 50px;
   text-align: center;
+  transition: 0.3s;
 }
 
 .nav_sns_img:hover{
   background-color: #fff;
-  cursor: pointer;
-  transition: 0.3s;
 }
 
 .footer{
