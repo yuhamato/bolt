@@ -5,6 +5,18 @@ body{
   color: #333;
 }
 
+@media screen and (max-width: 1199px){
+  body{
+    color: red;
+  }
+}
+
+@media screen and (max-width: 767px){
+  body{
+    color: blue;
+  }
+}
+
 .font-raleway{
   font-family: Raleway;
 }
@@ -27,10 +39,19 @@ a{
   float: right;
 }
 
+@media screen and (max-width: 1199px){
+  .float-left,.float-right{
+    float: none;
+  }
+  .header-contact_link,.menu{
+    float: right;
+  }
+}
+
 .header{
   background-color: #fff;
   position: fixed;  /*位置を固定*/
-  width: 100%;  /*画面幅が子要素が親を無視してしまった為、ここに100%を指定*/
+  width: 100%;  /*画面幅が子要素が親を無視してしまった為、ここに100%を指定すると子がはみ出ない？*/
   z-index: 1; /*ヘッダーが一番上のレイヤーに*/
 }
 
@@ -40,9 +61,16 @@ a{
   /* text-align: center; インナーの子要素全てがセンターになる*/
 }
 
+@media screen and (max-width: 1199px){
+  .inner{
+    width: 100%;
+    box-sizing: border-box;/*borderboxにしないとheaderのcontactがはみ出る*/
+  }
+}
+
 .header-inner{
   background-color: #fff;
-  padding: 15px 0;
+  padding: 15px;
 }
 
 .header_img{
@@ -61,6 +89,33 @@ a{
   color: #333;
 }
 
+@media screen and (min-width: 768px){
+  .menu{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px){
+  .header-contact_link{
+    display: none;
+  }
+  .menu{
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  .menu_line{ /*ハンバーガーメニュー*/
+    display: block; /*block要素に変えないと中身が表示されない*/
+    background-color: #ddd;
+    width: 25px;  /*横幅と縦を指定して線のようなBoxを作る。親の.menuには幅指定していないので大きさを自由に変えられる*/
+    height: 3px;
+    margin-bottom: 5px;
+  }
+  .menu_line:last-child{
+    margin-bottom: 0;
+  }
+}
+
 .main{
   background-color: 	#f2f2f2;
   padding-top: 70px;
@@ -68,7 +123,13 @@ a{
 
 .theme-inner{
   padding: 250px 0;
-  /* text-align: center; theme-innerの子要素.themeとsubthemeがセンターになる */
+  /* text-align: center; theme-innerの子要素.themeとsubthemeが一気にセンターになる */
+}
+
+@media screen and (max-width: 767px){
+  .theme-inner{
+    padding: 160px 0 130px 0;
+  }
 }
 
 .theme{
@@ -85,6 +146,19 @@ a{
   text-align: center;
 }
 
+@media screen and (max-width: 767px){
+  .theme{
+    font-size: 80px;
+    width: 300px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+  .subtheme{
+    width: 350px;
+    margin: 0 auto;
+  }
+}
+
 .what-block{
   background-color: #74cfae;
 }
@@ -94,13 +168,15 @@ a{
   padding: 50px 0 0 100px;
 }
 
-
+.what_text{
+  width: 650px;
+  text-align: center;
+}
 
 .what_text-top{
   color: #fff;
   font-size: 24px;
   margin-bottom: 35px;
-  text-align: center;
 }
 
 .what_text-bottom{
@@ -108,8 +184,27 @@ a{
   font-size: 20px;
   line-height: 25px;
   word-break: break-word;
-  width: 650px;
-  text-align: center;
+}
+
+@media screen and (max-width: 1199px){
+  .what-block-inner{
+    padding: 50px 0 25px 0;
+  }
+  .tab-sp-iphone-img{
+    width: 208px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+  .what_text{
+    width: 650px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 767px){
+  .what_text,.what_text-top,.what_text-bottom{
+    width: 300px;
+  }
 }
 
 .ourwork-inner{
@@ -145,17 +240,19 @@ a{
 }
 
 .ourwork-bottom-block{
-  width: 650px;
+  width: 780px; /*大体の幅をしていしてあげて、マージンオート*/
   margin: 0 auto;
   /* display: flex;
   justify-content: center; これでもできる */
 }
 
 .ourwork-bottom_text{
-  width: 460px;
+  box-sizing: border-box;
+  width: 580px;
   word-break: break-word;
   text-align: center;
-  line-height: 20px;
+  font-size: 20px;
+  line-height: 25px;
 }
 
 .ourwork-bottom_link{
@@ -169,6 +266,44 @@ a{
 
 .ourwork-bottom_link:hover{
   color: #333;
+}
+
+@media screen and (max-width: 1199px){
+  .ourwork_contents-block{
+    width: 300px;
+    margin: 0 auto;
+    margin-bottom: 80px;
+    font-size: 0;/*画像間の隙間がなくなる*/
+  }
+  .ourwork_contents_img{
+    display: block; /*blockにしないとマージンがつかなかった*/
+    margin: 0;
+  }
+  .ourwork_contents_img:nth-child(3){
+    margin-bottom: 80px;
+  }
+  .ourwork-bottom-block{
+    width: 100%;  /*子のサイズへ*/
+   }
+  .ourwork-bottom_text{
+    width: 1000px;  /*PC幅で指定していた580pxを100%で自由にし親も100％にすると可変に*/
+    margin: 0 auto;
+    margin-bottom: 40px;
+  }
+  .ourwork-bottom_link{
+    display: block; /*aタグはもともとinline要素のマージンオートが効かないのでblock要素に変える */
+    width: 100px;
+    margin: 0 auto;
+    font-size: 20px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 767px){
+  .ourwork-bottom_text{
+    width: 300px;
+    font-size: 20px;
+  }
 }
 
 .ourskill-bottom{
@@ -208,6 +343,21 @@ a{
   text-align: center;
 }
 
+@media screen and (max-width: 1199px){
+  .ourskill-bottom_contents{
+    width: 122px;
+    margin: 0 auto;
+  }
+  .circle{
+    margin: 0;
+    margin-bottom: 88px;
+  }
+  .circle:last-child{
+    margin-bottom: 0;
+  }
+
+}
+
 .nav-inner{
   padding: 200px 0;
   text-align: center;
@@ -217,7 +367,7 @@ a{
 .nav_sns_img{
   color: #74cfae;
   display: inline-block;  /*aタグをinline要素にして*/
-  padding: 20px 0;
+  padding: 30px 0;
   width: 185px; /*aタグのままだと横幅がつかない*/
   font-size: 50px;
   text-align: center;
@@ -226,6 +376,18 @@ a{
 
 .nav_sns_img:hover{
   background-color: #fff;
+}
+
+@media screen and (max-width: 767px){
+  .nav-inner{
+    width: 100%;
+    padding: 50px 0;
+  }
+  .nav_sns_img{
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+  }
 }
 
 .footer{
