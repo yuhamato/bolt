@@ -255,9 +255,10 @@ a{
     box-sizing: border-box;/*borderboxにしないとheaderのcontactがはみ出る*/
   }
   .ourwork_contents-block{
-    margin-bottom: 80px;
     font-size: 0;/*画像間の隙間がなくなる*/
-    text-align: center;
+    width: 300px;
+    margin: 0 auto;
+    margin-bottom: 80px;
   }
   .ourwork_contents_img{
     display: block; /*blockにしないとマージンがつかなかったのはimgタグはもともとinline要素だから*/
