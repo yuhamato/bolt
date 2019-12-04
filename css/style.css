@@ -219,7 +219,7 @@ a{
   color: #74cfae;
   display: inline-block;  /*aタグをinline要素にして*/
   padding: 30px 0;
-  width: 25%; /*aタグのままだと横幅がつかない*/
+  width: 25%; /*aタグのままだと横幅がつかない。レスポンシブなので％指定。（４つ要素があるので25％）*/
   font-size: 50px;
   text-align: center;
   transition: 0.3s;
