@@ -37,12 +37,11 @@ a{
 .inner{
   margin: 0 auto;
   width: 1100px;
-  /* text-align: center; インナーの子要素全てがセンターになる*/
 }
 
 .header-inner{
   background-color: #fff;
-  padding: 15px;
+  padding: 15px 0;
 }
 
 .header_img{
@@ -220,7 +219,7 @@ a{
   color: #74cfae;
   display: inline-block;  /*aタグをinline要素にして*/
   padding: 30px 0;
-  width: 185px; /*aタグのままだと横幅がつかない*/
+  width: 25%; /*aタグのままだと横幅がつかない*/
   font-size: 50px;
   text-align: center;
   transition: 0.3s;
@@ -251,8 +250,19 @@ a{
     float: right;
   }
   .inner{
+    width: 97%;
+  }
+  .what-block-inner{
+    padding: 50px 0 25px 0;
+    text-align: center;
+  }
+  .tab-sp-iphone-img{
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+  .what_text{
     width: 100%;
-    box-sizing: border-box;/*borderboxにしないとheaderのcontactがはみ出る*/
+    margin: 0 auto;
   }
   .ourwork_contents-block{
     font-size: 0;/*画像間の隙間がなくなる*/
@@ -264,14 +274,17 @@ a{
     display: block; /*blockにしないとマージンがつかなかったのはimgタグはもともとinline要素だから*/
     margin: 0;
   }
-  .ourwork_contents_img:nth-child(3){
+  .ourwork_contents_img:nth-child(3n){  /*３つごとにマージンをつける*/
     margin-bottom: 80px;
   }
+  .ourwork_contents_img:last-child{
+    margin-bottom: 0;
+  }
   .ourwork-bottom-block{
-    width: 100%;  /*子のサイズへ*/
+    width: 100%;  /*子のourwork-bottom_textサイズへ*/
    }
   .ourwork-bottom_text{
-    width: 1000px;  /*PC幅で指定していた580pxを100%で自由にし親も100％にすると可変に*/
+    width: 100%;/*PC幅で指定していた580pxを100%で自由にし親も100％にすると可変に*/
     margin: 0 auto;
     margin-bottom: 40px;
   }
@@ -281,18 +294,6 @@ a{
     margin: 0 auto;
     font-size: 20px;
     text-align: center;
-  }
-  .what-block-inner{
-    padding: 50px 0 25px 0;
-  }
-  .tab-sp-iphone-img{
-    width: 208px;
-    margin: 0 auto;
-    margin-bottom: 20px;
-  }
-  .what_text{
-    width: 650px;
-    margin: 0 auto;
   }
   .circle{
     display: block;
@@ -334,19 +335,16 @@ a{
   }
   .theme{
     font-size: 80px;
-    width: 300px;
-    margin: 0 auto;
     margin-bottom: 20px;
   }
   .subtheme{
-    width: 350px;
     margin: 0 auto;
   }
-  .what_text,.what_text-top,.what_text-bottom{
-    width: 300px;
+  .what_text{
+    width: 100%;
   }
   .ourwork-bottom_text{
-    width: 300px;
+    width: 100%;
     font-size: 20px;
   }
   .nav-inner{
